@@ -1,0 +1,12 @@
+[user]
+    name = Mark Bremer
+    email = markb@vitalbio.com
+    username = mrb
+[alias]
+    cm = commit -m
+    br = branch
+    co = checkout
+    com = checkout master
+    cob = checkout
+    st = status
+

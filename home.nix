@@ -9,6 +9,7 @@
     
     file = {
       ".bashrc".source = ./bashrc;
+      ".gitconfig".source = ./gitconfig;
     };
 
     packages = with pkgs; [
