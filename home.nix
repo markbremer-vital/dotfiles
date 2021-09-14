@@ -20,8 +20,16 @@
       zoom-us
       unzip
       screen
-      vscodium
       typora
+      rustup
+      gnumake
+      ctags
+      glibc.dev
+      ripgrep
+      file
+      binutils
+      gdbgui
+      cargo-generate
     ];
 
     sessionVariables = {
@@ -85,6 +93,42 @@
       vim-airline-themes
       nerdtree
       vim-gitgutter
+      vim-toml
     ];
+  };
+
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+    extensions = (with pkgs.vscode-extensions; [
+      matklad.rust-analyzer
+      tamasfe.even-better-toml
+    ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "nord-visual-studio-code";
+        publisher = "arcticicestudio";
+        version = "0.18.0";
+        sha256 = "1caism5qa62pgyggxyary2nv9xyqyym62x02kzxdar5n3xwsk3jj";
+      }
+      {
+        name = "rust";
+        publisher = "rust-lang";
+        version = "0.7.8";
+        sha256 = "039ns854v1k4jb9xqknrjkj8lf62nfcpfn0716ancmjc4f0xlzb3";
+      }
+      {
+        name = "cortex-debug";
+        publisher = "marus25";
+        version = "0.4.4";
+        sha256 = "0m2ylpq1r8fryjhj7ycr2grdybidr14l2qj7mz2fp8c5iypyalyq";
+      }
+    ];
+
+    # vscode settings.json is made read-only and controlled via this section; editing settings
+    # in the ui will reveal what to copy over here.
+    userSettings = {
+      # theme
+      "workbench.colorTheme" = "Nord";
+    };
   };
 }

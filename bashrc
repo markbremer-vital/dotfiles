@@ -74,4 +74,5 @@ alias compd='tar -cvf \!*.tar \!*; gzip \!*.tar'
 alias lrg_files='find -regex '"'"'.*/.*\.\(c\|cpp\|h\)$'"'"' -exec wc -l {} \; | sort -k1 -rn | head -10'
 alias cfg='cd ~/config/dotfiles/'
 alias dv='cd ~/development/'
+alias emb='nix-shell ~/config/embedded-base/shell.nix'
 
