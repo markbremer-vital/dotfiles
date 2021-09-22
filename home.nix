@@ -18,18 +18,23 @@
       firefox
       slack
       zoom-us
-      unzip
+      _7zz
       screen
       typora
-      rustup
-      gnumake
-      ctags
-      glibc.dev
       ripgrep
       file
-      binutils
-      gdbgui
-      cargo-generate
+      usbutils
+      powerline-fonts
+      xorg.xmodmap
+      saleae-logic
+      keepassxc
+
+      # General embedded development things
+      glibc.dev binutils gnumake ctags pkg-config
+      gcc gcc-arm-embedded openocd stlink
+
+      # Embedded Rust development things
+      rustup cargo-generate probe-run flip-link rust-analyzer
     ];
 
     sessionVariables = {
@@ -101,8 +106,7 @@
     enable = true;
     package = pkgs.vscodium;
     extensions = (with pkgs.vscode-extensions; [
-      matklad.rust-analyzer
-      tamasfe.even-better-toml
+      gruntfuggly.todo-tree
     ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "nord-visual-studio-code";
@@ -111,16 +115,22 @@
         sha256 = "1caism5qa62pgyggxyary2nv9xyqyym62x02kzxdar5n3xwsk3jj";
       }
       {
-        name = "rust";
-        publisher = "rust-lang";
-        version = "0.7.8";
-        sha256 = "039ns854v1k4jb9xqknrjkj8lf62nfcpfn0716ancmjc4f0xlzb3";
+        name = "rust-analyzer";
+        publisher = "matklad";
+        version = "0.2.743";
+        sha256 = "0j4njspzr2nz2lavy2d9hhxqay88v7g9d74dilnh7dgm8jqi8gny";
       }
       {
         name = "cortex-debug";
         publisher = "marus25";
         version = "0.4.4";
         sha256 = "0m2ylpq1r8fryjhj7ycr2grdybidr14l2qj7mz2fp8c5iypyalyq";
+      }
+      {
+        name = "even-better-toml";
+        publisher = "tamasfe";
+        version = "0.14.2";
+        sha256 = "17djwa2bnjfga21nvyz8wwmgnjllr4a7nvrsqvzm02hzlpwaskcl";
       }
     ];
 

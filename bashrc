@@ -72,7 +72,12 @@ alias untar='tar -xvf'
 alias mktar='tar -cvf'
 alias compd='tar -cvf \!*.tar \!*; gzip \!*.tar'
 alias lrg_files='find -regex '"'"'.*/.*\.\(c\|cpp\|h\)$'"'"' -exec wc -l {} \; | sort -k1 -rn | head -10'
+alias ref='cd ~/reference/'
+alias dl='cd ~/downloads/'
 alias cfg='cd ~/config/dotfiles/'
 alias dv='cd ~/development/'
+alias doc='cd ~/docs/'
 alias emb='nix-shell ~/config/embedded-base/shell.nix'
+
+alias winkey='xmodmap -e "keycode 133 = Super_R"'
 
