@@ -7,6 +7,10 @@
     br = branch
     co = checkout
     com = checkout master
-    cob = checkout
+    cob = checkout -b
     st = status
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit -n 20
+	  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all -n 20
+	  lolm = log --graph --decorate --pretty=oneline --abbrev-commit
+	  lolam = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
