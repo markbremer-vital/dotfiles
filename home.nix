@@ -28,6 +28,7 @@
       xorg.xmodmap
       saleae-logic
       keepassxc
+      xdotool
 
       # General embedded development things
       glibc.dev binutils gnumake ctags pkg-config
