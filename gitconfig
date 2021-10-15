@@ -2,11 +2,14 @@
     name = Mark Bremer
     email = markb@vitalbio.com
     username = mrb
+[core]
+    editor = nvim
 [alias]
     cm = commit -m
     br = branch
     co = checkout
     com = checkout master
+    cod = checkout develop
     cob = checkout -b
     st = status
     lol = log --graph --decorate --pretty=oneline --abbrev-commit -n 20

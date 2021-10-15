@@ -28,14 +28,17 @@
       xorg.xmodmap
       saleae-logic
       keepassxc
-      xdotool
+      gimp
+      most
+      gnome.dconf-editor
 
       # General embedded development things
       glibc.dev binutils gnumake ctags pkg-config
       gcc gcc-arm-embedded openocd stlink
+      libusb udev libudev pkgconfig libftdi
 
       # Embedded Rust development things
-      rustup cargo-generate probe-run flip-link rust-analyzer
+      rustup cargo-generate probe-run rust-analyzer cargo-flash
     ];
 
     sessionVariables = {
@@ -51,7 +54,7 @@
     userName = "Mark Bremer";
     userEmail = "markb@vitalbio.com";
     extraConfig = {
-      core.editor = "$EDITOR";
+      core.editor = "nvim";
     };
   };
 
@@ -138,8 +141,13 @@
     # vscode settings.json is made read-only and controlled via this section; editing settings
     # in the ui will reveal what to copy over here.
     userSettings = {
-      # theme
       "workbench.colorTheme" = "Nord";
+      "rust-analyzer.rustfmt.extraArgs" = [
+        {
+          "imports_layout" = "Vertical";
+          "reorder_imports" = false;
+        }
+      ];
     };
   };
 }
